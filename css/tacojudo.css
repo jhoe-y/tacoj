@@ -1,0 +1,65 @@
+/* Animaciones Keyframes */
+@keyframes slideIn {
+    from { 
+        transform: translateX(-100%); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
+@keyframes fadeInUp {
+    from { 
+        transform: translateY(30px); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
+
+@keyframes bounce-gentle {
+    0%, 100% { 
+        transform: translateY(0); 
+    }
+    50% { 
+        transform: translateY(-10px); 
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { 
+        box-shadow: 0 0 20px rgba(255, 107, 107, 0.5); 
+    }
+    50% { 
+        box-shadow: 0 0 40px rgba(255, 107, 107, 0.8); 
+    }
+}
+
+/* Clases de Animación */
+.animate-slide-in { 
+    animation: slideIn 1s ease-out; 
+}
+
+.animate-fade-in-up { 
+    animation: fadeInUp 0.8s ease-out; 
+}
+
+.animate-bounce-gentle { 
+    animation: bounce-gentle 2s infinite; 
+}
+
+.animate-pulse-glow { 
+    animation: pulse-glow 2s infinite; 
+}
+
+/* Efecto de Texto Gradiente */
+.gradient-text {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

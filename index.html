@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tacojudos - Promociones y Ofertas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/tacojudo.css">
+  <script src="js/tacojudo.js" defer></script>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Marcadores de posición para cada componente -->
+  <div id="header"></div>
+  <div id="hero"></div>
+  <div id="promociones"></div>
+  <div id="ofertas"></div>
+  <div id="anuncios"></div>
+  <div id="menu"></div>
+  <div id="cta"></div>
+  <div id="footer"></div>
+
+  <!-- Script para ensamblar la página -->
+  <script>
+    async function cargarComponente(id, archivo) {
+      try {
+        const respuesta = await fetch(`components/${archivo}`);
+        const html = await respuesta.text();
+        document.getElementById(id).innerHTML = html;
+      } catch (error) {
+        console.error(`Error cargando ${archivo}:`, error);
+      }
+    }
+
+    // Lista de componentes
+    const componentes = [
+      { id: "header", archivo: "header.html" },
+      { id: "hero", archivo: "hero.html" },
+      { id: "promociones", archivo: "promociones.html" },
+      { id: "ofertas", archivo: "ofertas.html" },
+      { id: "anuncios", archivo: "anuncios.html" },
+      { id: "menu", archivo: "menu.html" },
+      { id: "cta", archivo: "cta.html" },
+      { id: "footer", archivo: "footer.html" }
+    ];
+
+    // Cargar todos los componentes
+    componentes.forEach(c => cargarComponente(c.id, c.archivo));
+  </script>
+
+</body>
+</html>
